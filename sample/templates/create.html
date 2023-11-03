@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}
+View
+{% endblock title%}
+
+{% block content %}
+<h1>enter</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    name <input type="text" name="name">
+    age <input type="text" name="age">
+    <button>submit</button>
+</form>
+
+{% endblock content %}

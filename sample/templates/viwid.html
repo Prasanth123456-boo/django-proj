@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block title %}
+View
+{% endblock title%}
+
+{% block content %}
+{{movieid.name}}
+{% endblock content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ movie.name }}" required><br>
+    <label for="age">Age:</label>
+    <input type="number" name="age" value="{{ movie.age }}" required><br>
+    <button type="submit">Save Changes</button>
+</form>
+</body>
+</html>
+Delete (delete.html):
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+<title>Delete Movie</title>
+</head>
+<body>
+<h1>Delete Movie</h1>
+<p>Are you sure you want to delete "{{ movie.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="{% url 'view' %}">Cancel</a>
+</form>
+</body>
+</html>
+
+
+
+
+

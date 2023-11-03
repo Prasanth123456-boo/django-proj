@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block title %}
+View
+{% endblock title%}
+
+{% block content %}
+<h1 class="ok">Display</h1>
+
+{% for x in mov %}
+
+<h1>Title:{{x.name}}</h1>
+<p>Age:{{x.age}}</p>
+{% endfor %}
+{% endblock content %}
